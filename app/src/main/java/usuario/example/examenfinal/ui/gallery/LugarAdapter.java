@@ -55,34 +55,21 @@ public class LugarAdapter extends RecyclerView.Adapter<LugarAdapter.ViewHolder> 
         return new ViewHolder(view, mListener);
     }
 
-   /* private Drawable getDynamicPlaceholder(String fotoUrl) {
-        // Puedes implementar lógica aquí para generar un placeholder dinámico
-        // basado en la URL de la imagen o cualquier otro criterio deseado.
-        // Por ejemplo, puedes cargar un color específico como placeholder
-        return new ColorDrawable(Color.parseColor("#E0E0E0"));
-    }*/
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         final Lugar lugar = listLugares.get(position);
         holder.nombre.setText(listLugares.get(position).getNombre());
         holder.descripcion.setText(listLugares.get(position).getDescripcion());
-
-
-     //   DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
-       // String horaString = lugar.getHoraApertura().format(formatter);
-
     }
 
     @Override
     public int getItemCount() {
         return listLugares.size();
-    } //extends RecyclerView.Adapter<LugarAdapter.ViewHolder>
-
+    }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         private TextView nombre, descripcion, hora;
-      //  private ImageView foto;
 
         public ViewHolder(@NonNull View itemView, final OnItemClickListener listener) {
             super(itemView);
